@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="bg-blue-200 flex justify-center">
+    <div class="text-center w-[350px]">
+        <div class="title">
+            <h2 class="text-2xl font-bold">Expense Tracker</h2>
+            <h6 class="text-[10.72px] text-blue-700 font-bold">Muhammad Mohtsham Khan</h6>
+        </div>
+        <div class="py-[30px]">
+            <h4 class="text-[16px] uppercase font-bold text-center">Current Balance</h4>
+            <h1 id="balance" class="font-bold text-[32px]">0.00</h1>
+            <div class="flex justify-evenly bg-white my-5 p-5 shadow-[0_1px_3px_rgba(0,0,0,0.12),_0_1px_2px_rgba(0,0,0,0.24)]">
+                <div class="flex-1 text-center">
+                    <h4 class="text-[16px] font-bold">Income</h4>
+                    <p id="tIncome" class="text-[20px] font-bold text-green-700">0.00</p>
+                </div>
+                <div class="flex-1 border-l border-gray-300 text-center">
+                    <h4 class="text-[16px] font-bold">Expense</h4>
+                    <p id="tExpence" class="text-[20px] font-bold text-red-600">0.00</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-[18px] font-bold mt-10 mb-2.5 pb-2.5 border-b border-gray-400">Transaction History</h3>
+                <div id="tlist" class="space-y-2.5">
+                    <!-- Here is the Div Lists -->
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-[18px] font-bold mt-10 mb-2.5 pb-2.5 border-b border-gray-400">Add New Transaction</h3>
+                <div class="text-left">
+                    <label class="block my-2.5 font-bold" for="description">Description</label>
+                    <input id="description" class="rounded-sm w-full bg-white p-2.5 text-[16px]" type="text" placeholder="Detail of Transaction">
+                </div>
+                <div class="text-left">
+                    <label class="block my-2.5 font-bold" for="amount">Transaction Amount</label>
+                    <input id="amount" class="rounded-sm w-full bg-white p-2.5 text-[16px]" type="number" placeholder="PKR Value of Transaction">
+                </div>
+                <button onclick="addbtn()" class="bg-blue-500 w-full mt-2.5 rounded-sm p-2.5 font-bold text-[16px] text-white cursor-pointer">Add Transaction</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
