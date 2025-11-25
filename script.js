@@ -29,15 +29,17 @@ function showdiv(){
             let sign = item.amount >= 0 ? "+" : "-";
             let amountInt = Math.abs(item.amount);
             let classes;
+            let btnCls = "bg-black text-white absolute transform -translate-x-8 w-6 hidden group-hover:block";
             if(item.amount >= 0){
-                classes = "tamplate flex bg-white p-2.5 justify-between text-[16px] border-r-4 border-green-700 hover:bg-green-700 hover:text-white";
+                classes = "tamplate group relative flex bg-white p-2.5 justify-between text-[16px] border-r-4 border-green-700 hover:bg-green-700 hover:text-white shadow-[0_1px_3px_rgba(0,0,0,0.12),_0_1px_2px_rgba(0,0,0,0.24)]";
             }else{
-                classes = "tamplate flex bg-white p-2.5 justify-between text-[16px] border-r-4 border-red-600 hover:bg-red-600 hover:text-white";
+                classes = "tamplate group relative flex bg-white p-2.5 justify-between text-[16px] border-r-4 border-red-600 hover:bg-red-600 hover:text-white shadow-[0_1px_3px_rgba(0,0,0,0.12),_0_1px_2px_rgba(0,0,0,0.24)]";
             }
             list.innerHTML += `
                 <div class="${classes}">
                     <p id="display-d">${item.description}</p>
                     <p id="display-a">${sign} PKR ${amountInt}</p>
+                    <button onclick="delBtn()" class="${btnCls}">X</button>
                 </div>
             `
             // if(sign=="+"){
@@ -57,4 +59,8 @@ function showdiv(){
             // }
         }
     )
+}
+
+function delBtn(){
+    console.log("Delete Button Clicked");
 }

@@ -30,6 +30,11 @@
                 <h3 class="text-[18px] font-bold mt-10 mb-2.5 pb-2.5 border-b border-gray-400">Transaction History</h3>
                 <div id="tlist" class="space-y-2.5">
                     <!-- Here is the Div Lists -->
+                    <div class="tamplate group flex bg-white p-2.5 justify-between text-[16px] border-r-4 border-green-700 hover:bg-green-700 hover:text-white">
+                        <p id="display-d">${item.description}</p>
+                        <p id="display-a">${sign} PKR ${amountInt}</p>
+                        <button class="bg-black text-white absolute transform -translate-x-10 w-5 hidden group-hover:block">X</button>
+                    </div>
                 </div>
             </div>
 
