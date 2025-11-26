@@ -1,24 +1,34 @@
-let tIncome = 0;
-let tExpence = 0;
 let allData = [];
 
-function addbtn() {
-    let disc = document.getElementById("description").value;
-    let amount = Number(document.getElementById("amount").value);
-    if(amount>=0){
-        tIncome = tIncome + amount;
-    } else {
-        tExpence = tExpence + Math.abs(amount);
+
+function calculateTotals() {
+    let tIncome = 0;
+    let tExpence = 0;
+    for(let i=0; i<allData.length; i++){
+        let data = allData[i];
+        if(data.amount>=0){
+            tIncome = tIncome + data.amount;
+        } else {
+            tExpence = tExpence + Math.abs(data.amount);
+        }
     }
     let balance = tIncome - tExpence;
     document.getElementById("balance").innerText = `PKR = ${balance.toFixed(2)}`;
     document.getElementById("tIncome").innerText = tIncome.toFixed(2);
     document.getElementById("tExpence").innerText = tExpence.toFixed(2);
+}
+
+    
+
+function addbtn() {
+    let disc = document.getElementById("description").value;
+    let amount = Number(document.getElementById("amount").value);
     allData.push({
         description : disc,
         amount: amount
     });
     showdiv();
+    calculateTotals();
 }
 
 function showdiv(){
@@ -39,7 +49,7 @@ function showdiv(){
                 <div class="${classes}">
                     <p id="display-d">${item.description}</p>
                     <p id="display-a">${sign} PKR ${amountInt}</p>
-                    <button onclick="delBtn()" class="${btnCls}">X</button>
+                    <button onclick="delBtn(${index})" class="${btnCls}">X</button>
                 </div>
             `
             // if(sign=="+"){
@@ -61,6 +71,8 @@ function showdiv(){
     )
 }
 
-function delBtn(){
-    console.log("Delete Button Clicked");
+function delBtn(index){
+    allData.splice(index, 1);
+    calculateTotals(); 
+    showdiv();
 }

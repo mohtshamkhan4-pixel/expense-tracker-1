@@ -191,11 +191,14 @@
   .top-1 {
     top: calc(var(--spacing) * 1);
   }
-  .top-1\/2 {
-    top: calc(1/2 * 100%);
-  }
   .right-2 {
     right: calc(var(--spacing) * 2);
+  }
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
+  .m-5 {
+    margin: calc(var(--spacing) * 5);
   }
   .my-2 {
     margin-block: calc(var(--spacing) * 2);
@@ -242,9 +245,6 @@
   .w-5 {
     width: calc(var(--spacing) * 5);
   }
-  .w-5\.5 {
-    width: calc(var(--spacing) * 5.5);
-  }
   .w-6 {
     width: calc(var(--spacing) * 6);
   }
@@ -287,28 +287,8 @@
     --tw-translate-x: calc(var(--spacing) * 10);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-  .translate-x-\[-10px\] {
-    --tw-translate-x: -10px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .translate-x-\[-30px\] {
-    --tw-translate-x: -30px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .translate-x-\[-40px\] {
-    --tw-translate-x: -40px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .translate-x-\[-100px\] {
-    --tw-translate-x: -100px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .-translate-y-1 {
     --tw-translate-y: calc(var(--spacing) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .-translate-y-1\/2 {
-    --tw-translate-y: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .translate-y-0 {
@@ -323,6 +303,9 @@
   }
   .resize {
     resize: both;
+  }
+  .items-center {
+    align-items: center;
   }
   .justify-between {
     justify-content: space-between;
@@ -347,12 +330,22 @@
       margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
   .rounded-sm {
     border-radius: var(--radius-sm);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
   }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .border-r-2 {
+    border-right-style: var(--tw-border-style);
+    border-right-width: 2px;
   }
   .border-r-4 {
     border-right-style: var(--tw-border-style);
@@ -378,6 +371,9 @@
   .border-red-600 {
     border-color: var(--color-red-600);
   }
+  .bg-amber-400 {
+    background-color: var(--color-amber-400);
+  }
   .bg-black {
     background-color: var(--color-black);
   }
@@ -399,6 +395,12 @@
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
+  }
   .py-\[30px\] {
     padding-block: 30px;
   }
@@ -413,6 +415,9 @@
   }
   .text-left {
     text-align: left;
+  }
+  .text-right {
+    text-align: right;
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -437,14 +442,24 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
   .text-blue-700 {
     color: var(--color-blue-700);
   }
   .text-green-700 {
     color: var(--color-green-700);
   }
+  .text-green-800 {
+    color: var(--color-green-800);
+  }
   .text-red-600 {
     color: var(--color-red-600);
+  }
+  .text-red-800 {
+    color: var(--color-red-800);
   }
   .text-white {
     color: var(--color-white);
@@ -454,6 +469,10 @@
   }
   .underline {
     text-decoration-line: underline;
+  }
+  .shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-\[0_1px_3px_rgba\(0\,0\,0\,0\.12\)\,_0_1px_2px_rgba\(0\,0\,0\,0\.24\)\] {
     --tw-shadow: 0 1px 3px var(--tw-shadow-color, rgba(0,0,0,0.12)), 0 1px 2px var(--tw-shadow-color, rgba(0,0,0,0.24));
@@ -465,13 +484,6 @@
   }
   .group-hover\:block {
     &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        display: block;
-      }
-    }
-  }
-  .hover\:block {
-    &:hover {
       @media (hover: hover) {
         display: block;
       }
